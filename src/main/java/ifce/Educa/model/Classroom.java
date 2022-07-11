@@ -39,8 +39,5 @@ public class Classroom {
 	//	return users;
 	//}
 
-	//public void setUsers(Collection<User> users) {
-	//	this.users = users;
-	//}
 }
 

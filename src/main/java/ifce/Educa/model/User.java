@@ -27,16 +27,38 @@ public class User {
 	
 	@ManyToMany
 	private Collection<Classroom> classroom = new ArrayList<Classroom>();
+	
+	@Column (name = "user_type")
+	private String role;
+
+	private void addTeacher() {
+		this.role = "TEACHER";
+	}
+	
+	private void addStudent() {
+		this.role = "STUDENT";
+	}
 
 	public User() {
 		
 	}
 	
-	public User(String name, String email, String password) {
+	public User(String name, String email, String password, String role) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.password = password;
+		this.role = role;
+		
+		if(role == "teacher") {
+			this.addTeacher();
+		} else if(role == "student") {
+			this.addStudent();
+		}
+	}
+	
+	public String getRole() {
+		return role;
 	}
 	
 	public String getName() {
@@ -69,6 +91,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public Collection<Classroom> getClassroom() {
+		return classroom;
+	}
+
+	public void setClassroom(Collection<Classroom> classroom) {
+		this.classroom = classroom;
 	}
 
 }

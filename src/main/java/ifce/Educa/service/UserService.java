@@ -1,4 +1,6 @@
 package ifce.Educa.service;
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Service;
 
 import antlr.collections.List;
@@ -20,8 +22,8 @@ public class UserService {
 	//	return userRepository.findAll();
 	//}
 
-	public Object getAllUsers() {
+	public ArrayList<User> getAllUsers() {
 		// TODO Auto-generated method stub
-		return userRepository.findAll();
+		return (ArrayList<User>) userRepository.findAll();
 	}
 }

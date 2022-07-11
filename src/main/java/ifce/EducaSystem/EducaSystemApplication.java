@@ -1,7 +1,5 @@
 package ifce.EducaSystem;
 
-import javax.persistence.EntityManager;
-
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
@@ -11,7 +9,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import ifce.Educa.model.User;
 import ifce.Educa.Repository.UserRepository;
-import ifce.Educa.model.System;
 
 @SpringBootApplication
 public class EducaSystemApplication {
